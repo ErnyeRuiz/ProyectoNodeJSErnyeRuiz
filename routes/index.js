@@ -76,6 +76,7 @@ router.get('/students', async (req,res) =>{
 router.get('/editar/:id', async (req,res)=>{
     try {
         const student = await studentSchema.findById(req.params.id)
+        console.log('Prueba >> ',student.nombre)
         res.render('editar',{
             student
         });    
@@ -95,8 +96,7 @@ router.post('/editar/guardar/:id',async (req,res)=>{
             carrera: req.body.txtCarreraEdit
         });
         console.log("Id editado >>> ",req.params.id);
-                
-        console.log('Usuario', req.body.txtNombreEdit, "editado");
+        console.log("Id editado >>> ",req.params.txtNombreEdit);
         res.render('principal');
     } catch (error) {
         console.error(error);

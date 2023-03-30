@@ -10,19 +10,19 @@ html(lang='es')
                     form#loginform(method='post' action=`/editar/guardar/${student._id}`)
 
                         label(for="txtIdDel") ID
-                        input#password(type="text", name="txtIdDel",value=`${student._id}`, readonly)
+                        input#password(type="text", name="txtIdEdit",value=`${student._id}`, readonly)
                         
                         label(for="txtNombreDel") Nombre
-                        input#password(type="text", name="txtNombreDel", value=`${student.nombre}`, required)
+                        input#password(type="text", name="txtNombreEdit", value=`${student.nombre}`, required)
 
                         label(for="txtApellidoDel") Apellidos
-                        input#password(type="text", name="txtApellidoDel", value=`${student.apellido}`, required)                        
+                        input#password(type="text", name="txtApellidoEdit", value=`${student.apellido}`, required)                        
                         
                         label(for="txtCedulaDel") Cedula
-                        input#password(type="text", name="txtCedulaDel", value=`${student.cedula}`, required)
+                        input#password(type="text", name="txtCedulaEdit", value=`${student.cedula}`, required)
                         
                         label(for="txtCarreraDel") Carrera
-                        input#password(type="text", name="txtCarreraDel", value=`${student.carrera}`, required)
+                        input#password(type="text", name="txtCarreraEdit", value=`${student.carrera}`, required)
 
                         button(type="submit", title="Ingresar", name="Ingresar") Aplicar cambios                    
                 div#derecho
