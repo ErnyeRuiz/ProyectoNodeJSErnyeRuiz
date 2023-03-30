@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+html(lang='es')
+    head
+        title Borrar estudiante
+        link(rel='stylesheet',href='/stylesheets/hojaEstilos.css')
+    body
+        div#contenedor
+            div#contenedorcentrado
+                div#login
+                    form#loginform(method='post' action=`/borrar/${student._id}`)
+
+                        label(for="txtIdEdit") ID
+                        input#password(type="text", name="txtIdEdit",value=`${student._id}`, readonly)
+                        
+                        label(for="txtNombreEdit") Nombre
+                        input#password(type="text", name="txtNombreEdit", value=`${student.nombre}`, readonly)
+
+                        label(for="txtApellidoEdit") Apellidos
+                        input#password(type="text", name="txtApellidoEdit", value=`${student.apellido}`, readonly)  
+                        
+                        label(for="txtCedulaEdit") Cedula
+                        input#password(type="text", name="txtCedulaEdit", value=`${student.cedula}`, readonly)
+                        
+                        label(for="txtCarreraEdit") Carrera
+                        input#password(type="text", name="txtCarreraEdit", value=`${student.carrera}`, readonly)
+
+                        button(type="submit", title="Ingresar", name="Ingresar") Eliminar                 
+                div#derecho
+                    div.titulo Bienvenido
+                    hr
+                    div 
+                        h2 Eliminar estudiante
+                    div.pie-form                        
+                        a(href="/students") « Volver

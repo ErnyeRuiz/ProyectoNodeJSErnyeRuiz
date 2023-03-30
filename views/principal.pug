@@ -1,0 +1,86 @@
+doctype html
+
+head
+    meta(charset='utf-8')
+    title Inicio
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    meta(name='keywords', content='Free HTML Templates')
+    meta(name='description', content='Free HTML Templates')
+    link(rel='icon', href='img/favicon.ico')
+    // Google Web Fonts
+    link(rel='preconnect', href='https://fonts.gstatic.com')
+    link(href='https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap', rel='stylesheet')
+    // Font Awesome
+    link(href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css', rel='stylesheet')
+    // Libraries Stylesheet
+    link(href='/lib/owlcarousel/assets/owl.carousel.min.css', rel='stylesheet')
+    link(href='/lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css', rel='stylesheet')
+    // Customized Bootstrap Stylesheet
+    link(href='/stylesheets/style.css', rel='stylesheet')
+body
+    // Topbar Start
+    div.container-fluid.bg-light.pt-3.d-none.d-lg-block
+        div.container
+            div.row
+                div.col-lg-6.text-center.text-lg-left.mb-2.mb-lg-0
+                    div.d-inline-flex.align-items-center
+                        p: i.fa.fa-envelope.mr-2
+                        p info@example.com
+                        p.text-body.px-3 |
+                        p: i.fa.fa-phone-alt.mr-2
+                        p +012 345 6789
+                div.col-lg-6.text-center.text-lg-right
+                    div.d-inline-flex.align-items-center
+                        a.text-primary.px-3(href='')
+                            i.fab.fa-facebook-f
+                        a.text-primary.px-3(href='')
+                            i.fab.fa-instagram
+    // Topbar End
+
+    // Navbar Start
+    div.container-fluid.position-relative.nav-bar.p-0
+        div.container-lg.position-relative.p-0.px-lg-3(style='z-index: 9;')
+            nav.navbar.navbar-expand-lg.bg-light.navbar-light.shadow-lg.py-3.py-lg-0.pl-3.pl-lg-5
+                a.navbar-brand(href='/principal')
+                    h1.m-0.text-primary
+                        span.text-dark Stude
+                        | nts
+                button.navbar-toggler(type='button', data-toggle='collapse', data-target='#navbarCollapse')
+                    span.navbar-toggler-icon
+                div#navbarCollapse.collapse.navbar-collapse.justify-content-between.px-3
+                    div.navbar-nav.ml-auto.py-0
+                        a.nav-item.nav-link(href='#') Inicio
+                        a.nav-item.nav-link(href='#') Cursos
+                        a.nav-item.nav-link(href='/students') Estudiantes
+                        a.nav-item.nav-link(href='#') Matricula
+                        a.nav-item.nav-link(href='#') Acerca de
+                        a.nav-item.nav-link(href='/') Logout
+    // Navbar End
+
+    // Carousel Start
+    div.container-fluid.p-0
+        div#header-carousel.carousel.slide(data-ride='carousel')
+            div.carousel-inner
+                div.carousel-item.active
+                    img.w-100(src='img/cuc.jpg' alt='Image')
+                    div.carousel-caption.d-flex.flex-column.align-items-center.justify-content-center
+                        div.p-3(style='max-width: 900px;')
+                            h2.display-3.text-white.mb-md-4 Colegio Universitario de Cartago
+                            h4.text-white.text-uppercase.mb-md-3 Programacion IV
+                            h4.text-white.text-uppercase.mb-md-3 I Cuatrimestre
+                            h4.text-white.text-uppercase.mb-md-3 2023
+                            a.btn.btn-primary.py-md-3.px-md-5.mt-2(href='/students') Agregar estudiante
+                div.carousel-item
+                    img.w-100(src='img/carousel-2.jpg' alt='Image')
+                    div.carousel-caption.d-flex.flex-column.align-items-center.justify-content-center
+                        div.p-3(style='max-width: 900px;')
+                            h4.text-white.text-uppercase.mb-md-3 Tours &amp; Travel
+                            h1.display-3.text-white.mb-md-4 Discover Amazing Places With Us
+                            a.btn.btn-primary.py-md-3.px-md-5.mt-2(href='') Book Now
+            a.carousel-control-prev(href='#header-carousel' data-slide='prev')
+                div.btn.btn-dark(style='width: 45px; height: 45px;')
+                    span.carousel-control-prev-icon.mb-n2
+            a.carousel-control-next(href='#header-carousel' data-slide='next')
+                div.btn.btn-dark(style='width: 45px; height: 45px;')
+                    span.carousel-control-next-icon.mb-n2
+    // Carousel End

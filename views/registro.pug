@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+html(lang='es')
+    head
+        title Registro
+        link(rel='stylesheet',href='/stylesheets/hojaEstilos.css')
+    body
+        div#contenedor
+            div#contenedorcentrado
+                div#login
+                    form#loginform(method='post' action='/registro')
+
+                        label(for="usuario") Nombre
+                        input#password(type="text", name="txtNombre", placeholder="Nombre", required)                        
+
+                        label(for="password") Apellidos
+                        input#password(type="text", name="txtApellidos", placeholder="Apellidos", required)                        
+                        
+                        label(for="password") Correo
+                        input#password(type="text", name="txtCorreo", placeholder="Correo", required)
+                        
+                        label(for="password") Contraseña
+                        input#password(type="password", name="txtContraseña", placeholder="Contraseña", required)
+
+                        button(type="submit", title="Ingresar", name="Ingresar") Registrarme                       
+                div#derecho
+                    div.titulo Bienvenido
+                    hr
+                    div.pie-form
+                        a(href="#") Registre sus datos
+                        hr
+                        a(href="/") « Volver

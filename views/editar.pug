@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+html(lang='es')
+    head
+        title Editar estudiante
+        link(rel='stylesheet',href='/stylesheets/hojaEstilos.css')
+    body
+        div#contenedor
+            div#contenedorcentrado
+                div#login
+                    form#loginform(method='post' action=`/editar/guardar/${student._id}`)
+
+                        label(for="txtIdDel") ID
+                        input#password(type="text", name="txtIdDel",value=`${student._id}`, readonly)
+                        
+                        label(for="txtNombreDel") Nombre
+                        input#password(type="text", name="txtNombreDel", value=`${student.nombre}`, required)
+
+                        label(for="txtApellidoDel") Apellidos
+                        input#password(type="text", name="txtApellidoDel", value=`${student.apellido}`, required)                        
+                        
+                        label(for="txtCedulaDel") Cedula
+                        input#password(type="text", name="txtCedulaDel", value=`${student.cedula}`, required)
+                        
+                        label(for="txtCarreraDel") Carrera
+                        input#password(type="text", name="txtCarreraDel", value=`${student.carrera}`, required)
+
+                        button(type="submit", title="Ingresar", name="Ingresar") Aplicar cambios                    
+                div#derecho
+                    div.titulo Bienvenido
+                    hr
+                    div 
+                        h2 Actualizacion de estudiante
+                    div.pie-form                        
+                        a(href="/students") « Volver

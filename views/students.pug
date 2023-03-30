@@ -1,0 +1,218 @@
+doctype html
+
+head
+    meta(charset='utf-8')
+    title Students
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    meta(name='keywords', content='Free HTML Templates')
+    meta(name='description', content='Free HTML Templates')
+    link(rel='icon', href='img/favicon.ico')
+    // Google Web Fonts
+    link(rel='preconnect', href='https://fonts.gstatic.com')
+    link(href='https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap', rel='stylesheet')
+    // Font Awesome
+    link(href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css', rel='stylesheet')
+    // Libraries Stylesheet
+    link(href='/lib/owlcarousel/assets/owl.carousel.min.css', rel='stylesheet')
+    link(href='/lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css', rel='stylesheet')
+
+    // Customized Bootstrap Stylesheet
+    link(href='/stylesheets/style.css', rel='stylesheet')
+    link(href='/stylesheets/hojaEstilos.css', rel='stylesheet')
+body
+
+    //Top start
+    div.container-fluid.bg-light.pt-3.d-none.d-lg-block
+        div.container
+            div.row
+                div.col-lg-6.text-center.text-lg-left.mb-2.mb-lg-0
+                    div.d-inline-flex.align-items-center
+                        p: i.fa.fa-envelope.mr-2
+                        p info@example.com
+                        p.text-body.px-3 |
+                        p: i.fa.fa-phone-alt.mr-2
+                        p +012 345 6789
+                div.col-lg-6.text-center.text-lg-right
+                    div.d-inline-flex.align-items-center
+                        a.text-primary.px-3(href='')
+                            i.fab.fa-facebook-f
+                        a.text-primary.px-3(href='')
+                            i.fab.fa-instagram
+    //Topbar end
+
+    //Navbar start
+    div.container-fluid.position-relative.nav-bar.p-0
+        div.container-lg.position-relative.p-0.px-lg-3(style='z-index: 9;')
+            nav.navbar.navbar-expand-lg.bg-light.navbar-light.shadow-lg.py-3.py-lg-0.pl-3.pl-lg-5
+                a.navbar-brand(href='/principal')
+                    h1.m-0.text-primary
+                        span.text-dark Stude
+                        | nts
+                button.navbar-toggler(type='button', data-toggle='collapse', data-target='#navbarCollapse')
+                    span.navbar-toggler-icon
+                div#navbarCollapse.collapse.navbar-collapse.justify-content-between.px-3
+                    div.navbar-nav.ml-auto.py-0
+                        a.nav-item.nav-link(href='principal') Inicio
+                        a.nav-item.nav-link(href='principal') Cursos
+                        a.nav-item.nav-link(href='principal') Estudiantes
+                        a.nav-item.nav-link(href='principal') Matricula
+                        a.nav-item.nav-link(href='principal') Acerca de
+                        a.nav-item.nav-link(href='/') Logout
+
+    //Navbar end
+    // Header Start
+    div.container-fluid.page-header
+        div.container
+            div.d-flex.flex-column.align-items-center.justify-content-center(style='min-height: 400px')
+                h3.display-4.text-white.text-uppercase Registrar estudiante
+                div.d-inline-flex.text-white
+                    p.m-0.text-uppercase
+                    a.text-white(href='') Inicio
+                    i.fa.fa-angle-double-right.pt-1.px-3
+                    p.m-0.text-uppercase Estudiantes
+    // Header End
+
+    // Booking Start
+    div.container-fluid.booking.mt-5.pb-5
+        div.container.pb-5
+            form(method='post' action='/students')
+                div.bg-light.shadow(style='padding: 30px;')
+                    div.row.align-items-center(style='min-height: 60px;')
+                        div.col-md-10
+                            div.row
+                                div.col-md-3
+                                    div.mb-3.mb-md-0
+                                        input.form-control.p-4.datetimepicker-input(type='text' name='txtNombre' placeholder='Nombre' data-target='#date1' data-toggle='datetimepicker' required='')
+                                div.col-md-3
+                                    div.mb-3.mb-md-0
+                                            input.form-control.p-4.datetimepicker-input(type='text' name='txtApellido' placeholder='Apellido' data-target='#date1' data-toggle='datetimepicker' required='')
+                                div.col-md-3
+                                    div.mb-3.mb-md-0
+                                            input.form-control.p-4.datetimepicker-input(type='text' name='txtCedula' placeholder='Cedula' data-target='#date2' data-toggle='datetimepicker' required='')
+                                div.col-md-3
+                                    div.mb-3.mb-md-0
+                                        input.form-control.p-4.datetimepicker-input(type='text' name='txtCarrera' placeholder='Carrera' data-target='#date2' data-toggle='datetimepicker' required='')
+                        div.col-md-2
+                            button.btn.btn-primary.btn-block(type='submit' style='height: 47px; margin-top: -2px;') Agregar
+    // Booking End
+    // list students start
+    div.centradoDiv
+        div.row.mt-2
+            div.col-sm-12
+                table
+                    thead
+                        tr
+                            th(scope='col', style="padding:15px;") ID
+                            th(scope='col', style="padding:15px;") Nombre
+                            th(scope='col', style="padding:15px;") Apellido
+                            th(scope='col', style="padding:15px;") Cedula
+                            th(scope='col', style="padding:15px;") Carrera
+                    tbody
+                        each student in students
+                            tr
+                                th=student._id
+                                th=student.nombre
+                                td=student.apellido
+                                td=student.cedula
+                                td=student.carrera
+                                td(style="padding:15px;")
+                                    a(href=`/editar/${student._id}` style="margin:3px;") Editar
+                                    a(href=`/borrar/${student._id}` style="margin:3px;") Borrar                                    
+
+    // list students end
+    // Footer Start
+    div.container-fluid.bg-dark.text-white-50.py-5.px-sm-3.px-lg-5(style='margin-top: 90px;')
+        div.row.pt-5
+            div.col-lg-3.col-md-6.mb-5
+                a.navbar-brand(href='')
+                    h1.text-primary
+                        span.text-white Stude
+                        | nts
+                p Proyecto de programaci&oacute;n IV realizado en visual studio code
+                h6.text-white.text-uppercase.mt-4.mb-3(style='letter-spacing: 5px;') Contacto
+                div.d-flex.justify-content-start
+                    a.btn.btn-outline-primary.btn-square.mr-2(href='#')
+                        i.fab.fa-facebook-f
+                    a.btn.btn-outline-primary.btn-square(href='#')
+                        i.fab.fa-instagram
+            div.col-lg-3.col-md-6.mb-5
+                h5.text-white.text-uppercase.mb-4(style='letter-spacing: 5px;') Software utilizados
+                div.d-flex.flex-column.justify-content-start
+                    a.text-white-50.mb-2(href='/')
+                        i.fa.fa-angle-right.mr-2
+                            | Node JS
+                    a.text-white-50.mb-2(href='/')
+                        i.fa.fa-angle-right.mr-2
+                            | Express
+                    a.text-white-50.mb-2(href='/')
+                        i.fa.fa-angle-right.mr-2
+                            | Pug
+                    a.text-white-50.mb-2(href='/')
+                        i.fa.fa-angle-right.mr-2
+                            | Git
+                    a.text-white-50.mb-2(href='/')
+                        i.fa.fa-angle-right.mr-2
+                            | En espera...
+            div.col-lg-3.col-md-6.mb-5
+                h5.text-white.text-uppercase.mb-4(style='letter-spacing: 5px;') Datos del proyecto
+                div.d-flex.flex-column.justify-content-start
+                    a.text-white-50.mb-2(href='#')
+                        i.fa.fa-angle-right.mr-2
+                            | Programacion IV
+                    a.text-white-50.mb-2(href='#')
+                        i.fa.fa-angle-right.mr-2
+                            | Profesor : Jorge Collado
+                    a.text-white-50.mb-2(href='#')
+                        i.fa.fa-angle-right.mr-2
+                            | Estudiante: Ernye Ruiz
+                    a.text-white-50.mb-2(href='#')
+                        i.fa.fa-angle-right.mr-2
+                            | Cuatrimestre I
+                    a.text-white-50.mb-2(href='#')
+                        i.fa.fa-angle-right.mr-2
+                            | IV Proyecto
+                    a.text-white-50.mb-2(href='#')
+                        i.fa.fa-angle-right.mr-2
+                            | 2023
+            div.col-lg-3.col-md-6.mb-5
+                h5.text-white.text-uppercase.mb-4(style='letter-spacing: 5px;') acerca de
+                p
+                    i.fa.fa-map-marker-alt.mr-2
+                        | CUC, Cartago, Costa Rica
+                p
+                        i.fa.fa-phone-alt.mr-2
+                        | +506 2550-6100
+                p
+                    i.fa.fa-envelope.mr-2
+                        | infoCUC@cuc.cr
+    div.container-fluid.bg-dark.text-white.border-top.py-4.px-sm-3.px-md-5(style='border-color: rgba(256, 256, 256, .1) !important;')
+        div.row
+            div.col-lg-6.text-center.text-md-left.mb-3.mb-md-0
+                p.m-0.text-white-50
+                    | Realizado por Ernye Ruiz | I Cuatrimestre | 2023
+            div.col-lg-6.text-center.text-md-right
+                p.m-0.text-white-50
+                    | Colegio Universitario de Cartago
+    // Footer End
+
+    // Back to Top
+    a.btn.btn-lg.btn-primary.btn-lg-square.back-to-top(href='#')
+    i.fa.fa-angle-double-up
+
+    // JavaScript Libraries
+    script(src='https://code.jquery.com/jquery-3.4.1.min.js')
+    script(src='https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js')
+    script(src='lib/easing/easing.min.js')
+    script(src='lib/owlcarousel/owl.carousel.min.js')
+    script(src='lib/tempusdominus/js/moment.min.js')
+    script(src='lib/tempusdominus/js/moment-timezone.min.js')
+    script(src='lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js')
+
+    // Contact Javascript File
+    script(src='mail/jqBootstrapValidation.min.js')
+    script(src='mail/contact.js')
+
+    // Template Javascript
+    script(src='js/main.js')
+
+//en body

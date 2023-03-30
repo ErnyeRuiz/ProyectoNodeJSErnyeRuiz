@@ -1,0 +1,25 @@
+doctype html
+
+head
+    title Proyecto Progra IV
+    link(rel='stylesheet',href='/stylesheets/hojaEstilos.css')
+body 
+    div#contenedor
+        div#contenedorcentrado
+            div#login
+                form#loginform(method='post' action='principal')
+                    label(for="usuario") Usuario
+                    input#usuario(type="text", name="usuario", placeholder="Usuario", required)
+                    label(for="password") Contraseña
+                    input#password(type="password", name="password", placeholder="Contraseña", required)                    
+                    button(type="submit", title="Ingresar", name="Ingresar") Login
+                    
+            div#derecho
+                div.titulo Bienvenido
+                hr
+                div.pie-form
+                    a(href="#") ¿Perdiste tu contraseña?
+                    a(href="registro") ¿No tienes Cuenta? Registrate
+                    hr
+                    a(href="registro") « Volver
+
