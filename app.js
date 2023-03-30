@@ -7,7 +7,7 @@ require("dotenv").config();
 const routes = require('./routes/index');//para utilizar las rutas de forma ordenada
 
 // settings
-app.set('port', process.env.PORT || 3000);
+app.set('port', process.env.PORT);
 app.set('views', path.join(__dirname,'views')); //la carpeta views esta en la raiz y se llama views
 app.set('view engine','pug');
 //middlewares
@@ -24,24 +24,16 @@ app.use(routes);
 //static files
 app.use(express.static(path.join(__dirname,'public')));
 
-//MongoDB connection
-// mongoose
-//     .connect(process.env.uri) //las variables estan guardadas en el arhivo .env
-//     .then(() => console.log("Conectado a MongoDB"))
-//     .catch(e=>console.log(e))
-const user = "usuarioMongo";
-const password = "12345";
-const dbName = "institution"
-const uri = `mongodb+srv://${user}:${password}@cluster0.ybf5izn.mongodb.net/${dbName}?retryWrites=true&w=majority`;
+const uri = `mongodb+srv://${process.env.USER}:${process.env.PASSWORD}@cluster0.ybf5izn.mongodb.net/${process.env.DBNAME}?retryWrites=true&w=majority`;
 
 mongoose.connect(uri,
     {
         useNewUrlParser:true, useUnifiedTopology:true
     })
-    .then(() => console.log("base de datos conectada"))
+    .then(() => console.log("Base de datos conectada"))
     .catch(e=>console.log(e))
 
 //start the server
 app.listen(app.get('port'),() =>{
-    console.log("Servidor iniciado en puerto ",app.get('port'))
+    console.log("Servidor iniciado en puerto",app.get('port'))
 });
